@@ -5,6 +5,7 @@ Practicing OOP concepts such as inheritance, encapsulation, and polymorphism, an
 ```php -S localhost:3000```
 To run local server. 
 
+```
 .
 └── phpOOPPractice/
     ├── views/
@@ -13,3 +14,4 @@ To run local server.
     │   └── index.view.php
     ├── functions.php
     └── index.php
+```
