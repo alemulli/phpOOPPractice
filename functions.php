@@ -1,6 +1,27 @@
 <?php 
 
-class Rectangle {
+// A trait is a method that can be used in multiple classes
+trait echo_height {
+    public function get_height() {
+        echo $this->height;
+    }
+}
+
+// An interface defines rules that classes need to follow, so if a class implements the Shapes interface it needs to have a method for area and perimeter
+interface Shapes {
+
+    public function area();
+
+    public function perimeter();
+
+}
+
+
+
+class Rectangle implements Shapes{
+
+    use echo_height;
+
     // Properties
     // Properties can be public, protected or private
     // public: accessible from anywhere
@@ -39,4 +60,19 @@ class Square extends Rectangle {
     public function __construct(int $side) {
         parent::__construct($side, $side);
     }
+
+
+        public function perimeter() {
+        return ($this->width + $this->height) * 2;
+    }
+}
+
+
+
+// abstract classes don't exist
+abstract class FiveDimensionalRectangle implements Shapes{
+
+    // Because it's abstract it doesn't need to implement the area and perimeter methods from the Shapes interface
+    // I also cannot new up an object based on this class
+    // I could have another class extend from FiveDimensionalRectangle, but it would have to follow the rules of the Shapes interface in this example. I can new up objects from classes that extend an abstract class. 
 }

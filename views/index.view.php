@@ -11,6 +11,7 @@
         echo "Area: " . $newSquare->area() . "<br>";
         echo "Perimeter: " . $newSquare->perimeter() . "<br>";
         echo "Diagonal: " . $newSquare->diagonal() . "<br>";
+        $newSquare->echo_height();
 
 ?>
 <br/>
